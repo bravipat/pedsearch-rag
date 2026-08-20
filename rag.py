@@ -260,7 +260,7 @@ if __name__ == "__main__":
         print("\n(Answered via web search -- not found in local docs)")
         for url in result["web_citations"]:
             print(" -", url)
-    #else:
-        #print("\nSources:")
-        #for s in result["sources"]:
-            #print(f" - {s['file']} (chunk {s['chunk_id']}): {s['excerpt']}...")
+    # else:
+        # print("\nSources:")
+        # for s in result["sources"]:
+        #     print(f" - {s['file']} (chunk {s['chunk_id']}): {s['excerpt']}...")
