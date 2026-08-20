@@ -12,10 +12,114 @@ Vercel deploy:
 """
 
 import os
+import re
 import sys
+import markdown
+from html import escape
+from html.parser import HTMLParser
 from flask import Flask, request, render_template_string
 
 from rag import RagIndex
+
+_LIST_ITEM_RE = re.compile(r"^(\s*)([-*+]|\d+[.)])\s+")
+
+
+def _ensure_blank_line_before_lists(text: str) -> str:
+    """LLM answers often start a list right after a lead-in line with no
+    blank line in between (e.g. "Key points:\\n- one\\n- two"). Standard
+    markdown requires a blank line before a list to recognize it as one,
+    so without this the dashes would render as literal text. Insert the
+    blank line python-markdown needs, without disturbing existing lists.
+    """
+    lines = text.split("\n")
+    out = []
+    for line in lines:
+        is_list_item = bool(_LIST_ITEM_RE.match(line))
+        if is_list_item and out and out[-1].strip() != "" and not _LIST_ITEM_RE.match(out[-1]):
+            out.append("")
+        out.append(line)
+    return "\n".join(out)
+
+_MD_ALLOWED_TAGS = {
+    "p", "br", "hr",
+    "h1", "h2", "h3", "h4", "h5", "h6",
+    "strong", "b", "em", "i", "u", "s", "code", "pre",
+    "ul", "ol", "li",
+    "blockquote",
+    "a",
+    "table", "thead", "tbody", "tr", "th", "td",
+}
+_MD_ALLOWED_ATTRS = {"a": {"href", "title"}}
+_UNSAFE_HREF_SCHEMES = ("javascript:", "data:", "vbscript:")
+
+
+class _SafeHTMLSanitizer(HTMLParser):
+    """Whitelist-based HTML sanitizer (stdlib only -- no extra dependency).
+
+    Drops any tag not in _MD_ALLOWED_TAGS (keeping its inner text), strips
+    disallowed attributes, and blocks javascript:/data: hrefs. Assumes the
+    input is well-formed HTML (it comes straight out of python-markdown).
+    """
+
+    def __init__(self):
+        super().__init__(convert_charrefs=False)
+        self._out = []
+
+    def handle_starttag(self, tag, attrs):
+        self._emit_start(tag, attrs, self_close=False)
+
+    def handle_startendtag(self, tag, attrs):
+        self._emit_start(tag, attrs, self_close=True)
+
+    def _emit_start(self, tag, attrs, self_close):
+        if tag not in _MD_ALLOWED_TAGS:
+            return
+        allowed = _MD_ALLOWED_ATTRS.get(tag, set())
+        kept = []
+        for name, value in attrs:
+            if name not in allowed:
+                continue
+            if name == "href" and (value or "").strip().lower().startswith(_UNSAFE_HREF_SCHEMES):
+                continue
+            kept.append((name, value))
+        attr_str = "".join(f' {n}="{escape(v or "", quote=True)}"' for n, v in kept)
+        if tag == "a":
+            attr_str += ' target="_blank" rel="noopener noreferrer"'
+        self._out.append(f"<{tag}{attr_str}{' /' if self_close else ''}>")
+
+    def handle_endtag(self, tag):
+        if tag in _MD_ALLOWED_TAGS:
+            self._out.append(f"</{tag}>")
+
+    def handle_data(self, data):
+        self._out.append(escape(data))
+
+    def handle_entityref(self, name):
+        self._out.append(f"&{name};")
+
+    def handle_charref(self, name):
+        self._out.append(f"&#{name};")
+
+    def get_html(self) -> str:
+        return "".join(self._out)
+
+
+def _sanitize_html(html: str) -> str:
+    parser = _SafeHTMLSanitizer()
+    parser.feed(html)
+    parser.close()
+    return parser.get_html()
+
+
+def render_markdown(text: str) -> str:
+    """Convert an LLM-generated markdown answer into safe, styled-ready HTML."""
+    if not text:
+        return ""
+    html = markdown.markdown(
+        _ensure_blank_line_before_lists(text),
+        extensions=["extra", "sane_lists", "nl2br"],
+    )
+    return _sanitize_html(html)
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -203,7 +307,6 @@ PAGE = """
     padding: 22px;
     font-size: 15.5px;
     line-height: 1.6;
-    white-space: pre-wrap;
     box-shadow: 0 6px 20px rgba(20, 60, 95, 0.05);
     position: relative;
     overflow: hidden;
@@ -212,6 +315,47 @@ PAGE = """
     position: absolute; right: -20px; top: -20px; opacity: 0.08;
     pointer-events: none;
   }
+
+  .answer-md { position: relative; }
+  .answer-md > *:first-child { margin-top: 0; }
+  .answer-md > *:last-child { margin-bottom: 0; }
+  .answer-md p { margin: 0 0 12px; }
+  .answer-md h1, .answer-md h2, .answer-md h3, .answer-md h4 {
+    color: var(--ink); font-weight: 800; line-height: 1.3;
+    margin: 18px 0 8px;
+  }
+  .answer-md h1 { font-size: 19px; }
+  .answer-md h2 { font-size: 17.5px; }
+  .answer-md h3 { font-size: 16px; }
+  .answer-md h4 { font-size: 15px; }
+  .answer-md ul, .answer-md ol { margin: 0 0 12px; padding-left: 22px; }
+  .answer-md li { margin-bottom: 5px; }
+  .answer-md li:last-child { margin-bottom: 0; }
+  .answer-md strong, .answer-md b { color: var(--ink); font-weight: 800; }
+  .answer-md code {
+    background: var(--bg); border: 1px solid var(--line); color: #2b5e8f;
+    padding: 1px 6px; border-radius: 6px; font-size: 13.5px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  .answer-md pre {
+    background: var(--bg); border: 1px solid var(--line); border-radius: 12px;
+    padding: 12px 14px; overflow-x: auto; margin: 0 0 12px;
+  }
+  .answer-md pre code { background: none; border: none; padding: 0; }
+  .answer-md blockquote {
+    margin: 0 0 12px; padding: 4px 14px; border-left: 3px solid var(--accent-2);
+    color: var(--muted); font-style: italic;
+  }
+  .answer-md a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .answer-md a:hover { text-decoration: underline; }
+  .answer-md hr { border: none; border-top: 1px solid var(--line); margin: 16px 0; }
+  .answer-md table {
+    width: 100%; border-collapse: collapse; margin: 0 0 12px; font-size: 14px;
+  }
+  .answer-md th, .answer-md td {
+    border: 1px solid var(--line); padding: 6px 10px; text-align: left;
+  }
+  .answer-md th { background: var(--bg); font-weight: 800; }
 
   .sources {
     margin-top: 14px;
@@ -343,7 +487,7 @@ PAGE = """
     {% endif %}
 
     <form method="post" onsubmit="onAsk(this)">
-      <textarea name="question" placeholder="Ask a question..." {{ 'disabled' if startup_error else '' }}>{{ question or '' }}</textarea>
+      <textarea name="question" placeholder="Ask a question about your documents..." {{ 'disabled' if startup_error else '' }}>{{ question or '' }}</textarea>
       <div class="form-row">
         <button type="submit" id="ask-btn" {{ 'disabled' if startup_error else '' }}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
@@ -372,7 +516,7 @@ PAGE = """
         </span>
         <div class="answer">
           <svg class="deco" width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="#4fa3e3" stroke-width="1.5"><path d="M12 21s-7.5-4.6-10-9.3C.5 8.4 2 4.8 5.5 4c2-.5 4 .4 5 2.2C11.5 4.4 13.5 3.5 15.5 4 19 4.8 20.5 8.4 19 11.7 16.5 16.4 12 21 12 21z"/></svg>
-          {{ result.answer }}
+          <div class="answer-md">{{ result.answer_html | safe }}</div>
         </div>
 
         {% if result.sources %}
@@ -444,6 +588,7 @@ def index():
         if question:
             try:
                 result = rag.answer(question)
+                result["answer_html"] = render_markdown(result.get("answer", ""))
             except Exception as exc:  # noqa: BLE001 -- surface it in the UI instead of a 500
                 error = f"{type(exc).__name__}: {exc}"
     return render_template_string(
