@@ -276,6 +276,20 @@ PAGE = """
     background: #ffe0d0; padding: 1px 6px; border-radius: 6px; font-size: 12.5px;
   }
 
+  .disclaimer {
+    display: flex; align-items: flex-start; gap: 10px;
+    background: #fff9e6;
+    border: 1px solid #f5dd8f;
+    color: #6b5711;
+    border-radius: 16px;
+    padding: 13px 16px;
+    font-size: 12.5px;
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+  .disclaimer svg { width: 17px; height: 17px; flex: none; margin-top: 1px; color: #c99a1e; }
+  .disclaimer b { color: #4d3f0c; }
+
   footer.note {
     display: flex; align-items: center; justify-content: center; gap: 6px;
     text-align: center;
@@ -310,6 +324,11 @@ PAGE = """
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
         <span>Fast, friendly answers</span>
       </div>
+    </div>
+
+    <div class="disclaimer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <div><b>Heads up:</b> this is a personal, hobby project, not a medical product. Answers may be incomplete or wrong. Please don't use it for treatment decisions &mdash; always check with your child's doctor or another qualified professional.</div>
     </div>
 
     {% if startup_error %}
