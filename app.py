@@ -45,47 +45,103 @@ except Exception as exc:  # noqa: BLE001 -- deliberately broad: any startup fail
     STARTUP_ERROR = f"{type(exc).__name__}: {exc}"
     print(f"Startup failed: {STARTUP_ERROR}")
 
+HERO_IMAGE_URL = (
+    "https://images.unsplash.com/photo-1758691463331-2ac00e6f676f"
+    "?fm=jpg&q=75&w=1600&auto=format&fit=crop"
+)
+
 PAGE = """
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ask your documents</title>
+<title>Kids Health, Answered</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #16181d;
-    --muted: #6b7280;
-    --line: #e5e7eb;
-    --bg: #f7f7f8;
+    --ink: #1f3347;
+    --muted: #7b93a8;
+    --line: #dbeefc;
+    --bg: #f4f9ff;
     --card: #ffffff;
-    --accent: #6d4aff;
+    --accent: #4fa3e3;
+    --accent-2: #7ec1ee;
     --accent-ink: #ffffff;
-    --local: #12805c;
-    --local-bg: #e6f6ef;
-    --web: #9a6400;
-    --web-bg: #fff3d9;
+    --gold: #ff9466;
+    --local: #1f8f6e;
+    --local-bg: #e4f5ee;
+    --web: #b5730a;
+    --web-bg: #fff1dc;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     background: var(--bg);
     color: var(--ink);
     min-height: 100vh;
   }
-  .wrap { max-width: 680px; margin: 0 auto; padding: 48px 20px 80px; }
-  h1 { font-size: 22px; font-weight: 650; margin: 0 0 4px; }
-  .sub { color: var(--muted); font-size: 13.5px; margin: 0 0 28px; }
-  .sub code {
-    background: #eee; padding: 1px 6px; border-radius: 4px; font-size: 12.5px;
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 20px 80px; }
+
+  .hero {
+    position: relative;
+    height: 260px;
+    margin: 0 0 26px;
+    border-radius: 0 0 32px 32px;
+    overflow: hidden;
   }
+  .hero-img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .hero-scrim {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(15,40,60,0.12) 0%, rgba(15,40,60,0.75) 100%);
+  }
+  .hero-inner {
+    position: relative;
+    height: 100%;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 24px 24px 22px;
+    color: #fff;
+  }
+  .hero-inner h1 {
+    font-size: 27px; font-weight: 800; margin: 0 0 6px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  }
+  .hero-inner p {
+    margin: 0; font-size: 14px; color: #eaf6ff; max-width: 440px; line-height: 1.4;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.25);
+  }
+
+  .features {
+    display: flex; gap: 12px; margin: -46px 0 26px;
+    position: relative; z-index: 2;
+  }
+  .feature {
+    flex: 1; background: var(--card); border: 1px solid var(--line);
+    border-radius: 16px; padding: 14px 10px; text-align: center;
+    box-shadow: 0 8px 20px rgba(20,60,95,0.10);
+  }
+  .feature .ic {
+    width: 34px; height: 34px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 8px;
+  }
+  .feature .ic svg { width: 17px; height: 17px; color: #fff; }
+  .feature span { font-size: 11.5px; font-weight: 700; color: var(--ink); line-height: 1.3; display: block; }
+
   form {
     background: var(--card);
     border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 16px;
-    box-shadow: 0 1px 2px rgba(16,24,40,0.04);
+    border-radius: 20px;
+    padding: 18px;
+    box-shadow: 0 6px 20px rgba(20, 60, 95, 0.06);
   }
   textarea {
     width: 100%;
@@ -97,8 +153,9 @@ PAGE = """
     font-family: inherit;
     color: var(--ink);
     padding: 4px 2px;
+    background: transparent;
   }
-  textarea::placeholder { color: #9aa0ab; }
+  textarea::placeholder { color: #a9beb8; color: #9fb3c6; }
   .form-row {
     display: flex;
     justify-content: flex-end;
@@ -107,87 +164,153 @@ PAGE = """
     margin-top: 8px;
   }
   button {
-    background: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
     color: var(--accent-ink);
     border: none;
-    padding: 9px 20px;
+    padding: 10px 22px;
     border-radius: 999px;
     font-size: 14.5px;
-    font-weight: 600;
+    font-family: inherit;
+    font-weight: 700;
     cursor: pointer;
-    transition: opacity 0.15s ease;
+    transition: opacity 0.15s ease, transform 0.15s ease;
   }
-  button:hover { opacity: 0.9; }
-  button:disabled { opacity: 0.55; cursor: default; }
+  button:hover { opacity: 0.92; transform: translateY(-1px); }
+  button:disabled { opacity: 0.55; cursor: default; transform: none; }
 
-  .result { margin-top: 24px; }
+  .result { margin-top: 26px; }
   .badge {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     font-size: 12px;
-    font-weight: 650;
-    padding: 4px 10px;
+    font-weight: 750;
+    padding: 5px 12px;
     border-radius: 999px;
     margin-bottom: 12px;
   }
   .badge.local { background: var(--local-bg); color: var(--local); }
   .badge.web { background: var(--web-bg); color: var(--web); }
-  .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .badge svg { width: 13px; height: 13px; }
 
   .answer {
     background: var(--card);
     border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 20px;
+    border-radius: 20px;
+    padding: 22px;
     font-size: 15.5px;
-    line-height: 1.55;
+    line-height: 1.6;
     white-space: pre-wrap;
+    box-shadow: 0 6px 20px rgba(20, 60, 95, 0.05);
+    position: relative;
+    overflow: hidden;
+  }
+  .answer .deco {
+    position: absolute; right: -20px; top: -20px; opacity: 0.08;
+    pointer-events: none;
   }
 
   .sources {
     margin-top: 14px;
     background: var(--card);
     border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 14px 18px;
+    border-radius: 20px;
+    padding: 16px 20px;
   }
   .sources h3 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
     font-size: 11.5px;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: var(--muted);
-    margin: 0 0 8px;
-    font-weight: 650;
+    margin: 0 0 10px;
+    font-weight: 800;
   }
-  .sources ul { margin: 0; padding-left: 18px; }
-  .sources li { font-size: 13.5px; margin-bottom: 6px; color: #374151; }
+  .sources h3 svg { width: 13px; height: 13px; }
+  .sources ul { margin: 0; padding-left: 0; list-style: none; }
+  .sources li {
+    display: flex; gap: 8px;
+    font-size: 13.5px; line-height: 1.5;
+    margin-bottom: 10px; color: #52708a;
+  }
+  .sources li:last-child { margin-bottom: 0; }
+  .sources li svg { width: 14px; height: 14px; flex: none; margin-top: 2px; color: var(--accent); }
   .sources li b { color: var(--ink); }
-  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a { color: var(--accent); text-decoration: none; font-weight: 600; }
   .sources a:hover { text-decoration: underline; }
 
-  .empty { color: var(--muted); font-size: 14px; margin-top: 8px; }
+  .empty {
+    display: flex; align-items: center; gap: 8px;
+    color: var(--muted); font-size: 14px; margin-top: 14px;
+  }
+  .empty svg { width: 16px; height: 16px; flex: none; }
+
+  .empty-state {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--card); border: 1px dashed var(--line); border-radius: 18px;
+    padding: 18px; margin-top: 22px; color: var(--muted); font-size: 13.5px; line-height: 1.5;
+  }
+  .empty-state .ic {
+    width: 40px; height: 40px; border-radius: 12px; flex: none;
+    background: var(--local-bg); display: flex; align-items: center; justify-content: center;
+  }
+  .empty-state .ic svg { width: 20px; height: 20px; color: var(--accent); }
 
   .setup-error {
-    background: #fff0f0;
-    border: 1px solid #f3b4b4;
-    color: #7a1f1f;
-    border-radius: 14px;
-    padding: 16px 18px;
+    background: #fff2ec;
+    border: 1px solid #ffcdb8;
+    color: #8a3a1f;
+    border-radius: 20px;
+    padding: 18px 20px;
     font-size: 13.5px;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
   .setup-error b { display: block; margin-bottom: 4px; font-size: 14px; }
   .setup-error code {
-    background: #fbdada; padding: 1px 6px; border-radius: 4px; font-size: 12.5px;
+    background: #ffe0d0; padding: 1px 6px; border-radius: 6px; font-size: 12.5px;
   }
+
+  footer.note {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 36px;
+  }
+  footer.note svg { width: 13px; height: 13px; color: var(--gold); flex: none; }
 </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>Ask your documents</h1>
-    <p class="sub">Indexed folder: <code>{{ docs_dir }}</code></p>
+    <div class="hero">
+      <img class="hero-img" src="{{ hero_image_url }}" alt="A doctor examining a young boy while his mother looks on" loading="eager">
+      <div class="hero-scrim"></div>
+      <div class="hero-inner">
+        <h1>Kids Health, Answered</h1>
+        <p>Get clear, trustworthy answers &mdash; from your own guides, or the web when needed.</p>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <span>Grounded in your guides</span>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <span>Web search backup</span>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <span>Fast, friendly answers</span>
+      </div>
+    </div>
 
     {% if startup_error %}
       <div class="setup-error">
@@ -203,28 +326,48 @@ PAGE = """
     <form method="post" onsubmit="onAsk(this)">
       <textarea name="question" placeholder="Ask a question about your documents..." {{ 'disabled' if startup_error else '' }}>{{ question or '' }}</textarea>
       <div class="form-row">
-        <button type="submit" id="ask-btn" {{ 'disabled' if startup_error else '' }}>Ask</button>
+        <button type="submit" id="ask-btn" {{ 'disabled' if startup_error else '' }}>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+          Ask
+        </button>
       </div>
     </form>
 
     {% if error %}
-      <p class="empty">Something went wrong answering that: {{ error }}</p>
+      <p class="empty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Something went wrong answering that: {{ error }}
+      </p>
     {% endif %}
 
     {% if result %}
       <div class="result">
         <span class="badge {{ 'web' if result.used_web_search else 'local' }}">
-          <span class="dot"></span>
-          {{ 'Answered via internet search' if result.used_web_search else 'Answered from your documents' }}
+          {% if result.used_web_search %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          Answered via internet search
+          {% else %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          Answered from your documents
+          {% endif %}
         </span>
-        <div class="answer">{{ result.answer }}</div>
+        <div class="answer">
+          <svg class="deco" width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="#4fa3e3" stroke-width="1.5"><path d="M12 21s-7.5-4.6-10-9.3C.5 8.4 2 4.8 5.5 4c2-.5 4 .4 5 2.2C11.5 4.4 13.5 3.5 15.5 4 19 4.8 20.5 8.4 19 11.7 16.5 16.4 12 21 12 21z"/></svg>
+          {{ result.answer }}
+        </div>
 
         {% if result.sources %}
         <div class="sources">
-          <h3>Sources</h3>
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Sources
+          </h3>
           <ul>
           {% for s in result.sources %}
-            <li><b>{{ s.file }}</b> (chunk {{ s.chunk_id }}) &mdash; {{ s.excerpt }}...</li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+              <span><b>{{ s.file }}</b> (chunk {{ s.chunk_id }}) &mdash; {{ s.excerpt }}...</span>
+            </li>
           {% endfor %}
           </ul>
         </div>
@@ -232,25 +375,39 @@ PAGE = """
 
         {% if result.web_citations %}
         <div class="sources">
-          <h3>Web sources</h3>
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Web sources
+          </h3>
           <ul>
           {% for url in result.web_citations %}
-            <li><a href="{{ url }}" target="_blank" rel="noopener">{{ url }}</a></li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              <a href="{{ url }}" target="_blank" rel="noopener">{{ url }}</a>
+            </li>
           {% endfor %}
           </ul>
         </div>
         {% endif %}
       </div>
-    {% elif question %}
-      <p class="empty">No question submitted.</p>
+    {% elif not startup_error and not error %}
+      <div class="empty-state">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <div>Not sure what to ask? Try things like &ldquo;What are signs of an ear infection?&rdquo; or &ldquo;When should I call the doctor for a rash?&rdquo;</div>
+      </div>
     {% endif %}
+
+    <footer class="note">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 15 9l7 1-5 5 1.5 7L12 18.5 5.5 22 7 15 2 10l7-1 3-7z"/></svg>
+      Answers come from your own documents first &mdash; the web is only used as a backup.
+    </footer>
   </div>
 
   <script>
     function onAsk(form) {
       var btn = document.getElementById('ask-btn');
       btn.disabled = true;
-      btn.textContent = 'Thinking...';
+      btn.innerHTML = 'Thinking&hellip;';
     }
   </script>
 </body>
@@ -277,6 +434,7 @@ def index():
         question=question,
         docs_dir=DOCS_DIR,
         startup_error=STARTUP_ERROR,
+        hero_image_url=HERO_IMAGE_URL,
     )
 
 
