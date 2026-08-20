@@ -1,0 +1,751 @@
+Review article: Medical intelligence | Published 30 July 2012, doi:10.4414/smw.2012.13654
+Cite this as: Swiss Med Wkly. 2012;142:w13654
+
+Infections in paediatrics: old and new diseases
+Klara M. Posfay-Barbe
+Children’s Hospital of Geneva, University Hospitals of Geneva, Switzerland
+
+Summary
+Paediatric infectious diseases have been reported since
+Hippocrates, and were always closely linked with the evolution of medicine. Current insights and recommendations
+by the Pediatric Infectious Diseases Group of Switzerland
+for the management of common paediatric diseases, such
+as acute otitis media, pharyngitis, and acute viral gastroenteritis are reviewed. The emergence of “old” vaccine-preventable diseases – pertussis and measles – is also discussed. Furthermore, the impact of the appearance of new
+hosts in paediatric – very low birthweight infants, immunosuppressed patients – is evaluated. Finally, new emerging
+paediatric infectious diseases caused by newly discovered
+viruses, such as human metapneumovirus, human bocavirus, or human coronavirus NL63 are explored. This overview gives a general idea on some topics that are currently
+significant and specific to paediatric infectious diseases.
+Key words: paediatric; infection; acute otitis media;
+pharyngitis; acute gastroenteritis; rotavirus; pertussis;
+measles; vaccine-preventable diseases; prematurity
+
+Introduction
+Infectious diseases have been, since the beginning of time,
+closely linked to paediatrics. The reason is simple and unfortunately still prevails in developing countries; infections
+were and are major causes of childhood morbidity and mortality [1]. While Hippocrates (4th century B.C.), Celsus (in
+the 1st century A. D.), Oribasius (4th century), or Ibn Sina
+(11th century) described with astounding accuracy paediatric infections, such as mumps, roundworms, infant rashes,
+cough, throat inflammation, or tetanus, the first “paediatric infectious disease” printed book is attributed to the Italian Paolo Bagellardo in 1472. During this period, however,
+theories about diseases hadn’t evolved and clinical examination was not valued. It is only with Guillaume de Baillou’s work that clinical observation was used to describe
+a whooping cough epidemic (1578). By the end of the
+17th century, the concept of contagious nature was suggested concerning diphtheria [2], and specific paediatric infectious diseases were recognised. For example, Thomas
+Sydenham carefully described chorea in 1686, as well as
+measles and scarlet fever.
+
+Swiss Medical Weekly · PDF of the online version · www.smw.ch
+
+The public health burden of infectious diseases in childhood was possibly first studied by Hugh Smith, who
+showed that from 1762 to 1771 approximately 2/3 of children born in London died before the age of 5 and that most
+deaths occurred before the age of 2 [2, 3].
+However, three major steps changed the landscape of paediatric infectious diseases. First, when in 1798 Edward Jenner published his report on smallpox vaccine, which started
+a new fantastic era of protecting children against several (fatal) diseases before they even get sick. Second, was
+the discovery of bacteria, and later viruses, and other infectious organisms. Semmelweis, a Hungarian obstetrician,
+who, after observing that puerperal death rates were much
+higher in wards managed by physicians compared to midwives, suggested that doctors disinfect their hands between
+patients, and wear clean coats for the ward and different
+clothing for the room where post mortems were carried
+out. Although he was ferociously criticised, a simple measure such as hand hygiene achieved an unbelievably important drop in perinatal death rates. Louis Pasteur and Robert
+Koch in the 1860s and 1870s showed that microorganisms
+grew in broth in a sealed tube, but no growth or spoiling
+of the broth occurred if it was boiled first. The aetiologic agents of many infectious diseases where then identified at the turn of the century. Pasteurisation significantly
+changed the outcome of paediatric infectious diseases, because a safe milk supply effectively reduced mortality from
+diarrheal illness in young children. Third, the discovery of
+antimicrobials, such as penicillin, first discovered in 1928
+by Fleming and then developed by Chain, Florey and Heatley completely changed the perspective from a preventive
+to a curative approach in paediatric infectious diseases.
+In 2012, new challenges await the physician taking care
+of children with infectious diseases. Some old diseases are
+forgotten, but re-emerge, some “new” diseases have appeared, and new “hosts” change the way diseases arise or
+endanger these children. Some of these aspects will be reviewed below.
+
+Bread and butter in paediatric
+infectious diseases
+Most common infectious diseases in general paediatric
+practice – in developed countries – include acute otitis media, pharyngitis and gastroenteritis. Diagnosis for all three
+
+Page 1 of 10
+
+Review article: Medical intelligence
+
+is not usually a problem, but treatment recommendations
+have changed over time for several reasons.
+Acute otitis media
+Acute otitis media is extremely common during childhood:
+90% of children have at least one episode by 2 years of age
+[4]. Risk factors include young age or exposure to young
+children through daycare for example, and family history.
+Exposure to smoke has also been reported as a risk factor
+[5]. Tympanocenteses during an acute episode can recover
+viruses, such as respiratory syncytial virus, parainfluenza
+(types 1–3), influenza (A and B), enterovirus, rhinovirus, but also bacteria, such as Streptococcus pneumoniae,
+Haemophilus influenzae (usually non-typable), Streptococcus pyogenes (= group A Streptococcus), or Moraxella catarrhalis [6, 7]. The proportion of different microorganisms
+varies according to age and region. Two recent events have
+changed the approach to acute otitis media: first the introduction of universal pneumococcal vaccination, and the
+emergence of penicillin-resistant pneumococcal strains.
+In the pre-licensure trial, pneumococcal conjugate vaccine
+had a 7% efficacy in preventing AOM with an increased
+efficacy in children with recurrent episodes [8]. In a Cochrane review vaccination showed a pooled relative reduc-
+
+Swiss Med Wkly. 2012;142:w13654
+
+tion of AOM between 6% and 7% in children <12 years,
+but had no clear effect on recurrent AOM [9]. In another
+study, vaccination decreased pneumococcal AOM by 48%,
+with a 38% decrease in otorrhea visits as a collateral benefit, and possibly an economic impact on public health [10,
+11]. Further epidemiological studies are needed to evaluate the effect of serotype replacement to non-vaccine serotypes on the incidence of otitis media. Increasing penicillin and multidrug resistance among S. pneumoniae strains
+preceded the introduction of pneumococcal vaccines. The
+7 serotypes originally included in the conjugate vaccine
+were among the strains most commonly found in invasive pneumococcal diseases and with known antibiotic resistance. Since then, serotype replacement, especially the
+emergence of serotype 19A, has been observed and has
+been the basis of increasing the pneumococcal conjugate
+vaccine’s valence to contain 13 serotypes, including 19A.
+In Switzerland, in 2009, two thirds of pneumococcal strains
+found in nasopharyngeal swabs were serotypes included in
+the 13-valent pneumococcal conjugate vaccine (77%; 95%
+confidence interval: 66%–88%) [12]. Furthermore, 16% of
+the strains had an intermediate or complete resistance to
+one antibiotic, while 6% showed several resistances.
+According to the Pediatric Infectious Diseases Group of
+Switzerland (www.pigs.ch), which includes all paediatric
+infectious diseases specialists of Switzerland, recommendations for the treatment of acute otitis media in this country
+are summarised in (fig. 1).
+
+Figure 1
+
+Figure 2
+
+Current recommendations for the treatment of acute otitis media by
+the pediatric infectious diseases specialists of Switzerland
+(www.pigs.ch).
+
+Current recommendations for the management of acute pharyngitis
+by the Pediatric Infectious Diseases Specialists of Switzerland
+(www.pigs.ch).
+
+Swiss Medical Weekly · PDF of the online version · www.smw.ch
+
+Page 2 of 10
+
+Review article: Medical intelligence
+
+Complications of acute otitis media include perforation of
+the tympanic membrane, or less commonly facial palsy,
+mastoiditis, labyrinthitis, and hearing loss.
+Pharyngitis
+Pharyngitis, an inflammation of the mucous membrane and
+underlying structures of the pharynx, is also a very common disease, and accounts for approximately 5% of all visits [13]. It can be found in all age groups, but is most common among school-aged children and adolescents. Many
+viruses and bacteria can cause pharyngitis, but most cases
+are viral and self-limited. Streptococcus pyogenes, also
+called group A beta-hemolytic Streptococcus (GAS), is the
+most important bacterial cause of pharyngitis. The challenge of pharyngitis is to identify properly the minority of
+patients with GAS (around 15–30%) who need antibiotic
+treatment among the majority with viral pharyngitis who
+do not. The reason to treat GAS pharyngitis- a self-limited
+disease- is to shorten the clinical course of the disease,
+to avoid suppurative complications, such as lymphadenitis,
+peritonsillar abscess, mastoiditis, but mostly nonsuppurative sequelae such as acute rheumatic fever, acute poststreptococcal glomerulonephritis, or reactive arthritis,
+among others [14]. Diagnosis is usually made with either
+rapid antigen detection tests, or regular throat culture. The
+specificity of both tests is high (between 90–95%), but
+their sensitivity varies (between 55–99%) depending on
+the test used, and the skill of the person doing the swab
+[15, 16]. Chiappini et al. recently reviewed noticeably different recommendations from international guidelines for
+the management of acute pharyngitis [17]. Twelve national
+guidelines were reviewed and showed substantial differences in the management of pharyngitis, although some
+used Centor’s score to evaluate the risk of GAS, and all recommended penicillin as the first choice for treating GAS
+pharyngitis [18]. In Switzerland, management of acute
+pharyngitis, as recommended by the Pediatric Infectious
+Diseases Group of Switzerland (www.pigs.ch) is summarised in (fig. 2). Patients are no more contagious after 24
+hours of antibiotics. However, patients can have GAS in
+their pharynx after an appropriate antibiotic treatment. This
+bacteriologic failure should be divided in clinical failure,
+when patients still have pharyngitis after taking the antimicrobial, and carrier state. Carrier state can last several
+months during which the patient may have viral pharyngitis
+and still test positive for GAS. Eradication of carrier state is
+suggested when there is a family history of rheumatic disease, when there is an outbreak of acute rheumatic fever
+or acute post-streptococcal glomerulonephritis in the community, when there is a “ping-pong” effect in the family,
+and when despite reassurance the parent’s anxiety level
+is unbearable. Eradication is usually obtained with oral
+clindamycin for 10 days (20 mg/kg/day in 3 doses) [19].
+Unfortunately, chronic carriage can be re-acquired after a
+successful eradication. Preventing GAS infection and its
+sequelae through vaccination would be essential. Several
+vaccine models- reviewed recently by Pandey et al- are
+currently being investigated [20]. Some target the M-protein, others antigens critical for the bacteria’s infectiousness. These vaccines are not yet available for clinical use.
+
+Swiss Medical Weekly · PDF of the online version · www.smw.ch
+
+Swiss Med Wkly. 2012;142:w13654
+
+Acute gastroenteritis
+After respiratory illnesses, diarrhea is the most common
+disease among children, occurring at a rate of approximately 3 per year in children younger than 3 years of age
+going to childcare [21]. It remains the leading cause of
+paediatric morbidity and mortality worldwide. Infectious
+diarrhea can be caused by viral, bacterial, or parasitic microorganism, most acquired through the fecal-oral route
+from person-to-person transmission or from contaminated
+water or food. In childcare centres and in most developed
+countries, rotavirus, enteric adenovirus, astrovirus,
+caliciviruses are the most frequent causes of acute gastroenteritis. In mild cases, the aetiologic agent is not always
+searched for, as treatment is usually symptomatic, and is
+based on rehydration and electrolyte replacement. In very
+young children, in children with risk factors such as immune deficiency, in children returning from a trip, or in
+children with a severe presentation, the pathogen should
+be explored to provide- if necessary- additional treatment,
+such as antibiotics. Before the late 1960s, rehydration in
+hospitals was usually recommended intravenously. Since
+then, several studies have shown the benefit of oral rehydration compared with intravenous therapy [22, 23]: it
+reduces hospitalisation rates, costs, and does not require
+much equipment. It does not however decrease the frequency or volume of stools, nor the duration of diarrhea.
+When the child refuses to breastfeed or to drink the formulation of oral rehydration therapy, it can be administered
+through a nasogastric tube. Because of the important burden of disease in young children, vaccines against rotavirus
+were developed. The first widely distributed vaccine
+(Rotashield®, Wyeth Laboratories) was withdrawn in 1999,
+after an association with an increased risk for intussusception was demonstrated [24]. Since then two oral vaccines
+are available to children between 6 weeks and 6 months of
+age and have not been associated with this complication:
+Rotarix® (2008; GlaxoSmithKline) and Rotateq® (2006;
+Merck). Their efficacy is estimated around 85–95% against
+severe disease and hospital admission.
+In Switzerland, it is estimated that rotaviral infection is responsible for approximately 6,000 consultations per year
+(1.6 per 100 children <5 years old). However, secondary
+hospital admissions only concern 1.6 per 1,000 children <5
+years old, to which nosocomial disease should be added.
+Cost-effect analyses in Switzerland by the Federal Commission of Vaccination have decided against introducing
+rotavirus vaccination in the routine immunisation schedule,
+but kept it as an optional, individually decided vaccination
+[25].
+
+“Old” paediatric infectious diseases,
+but still kicking
+Some “old” paediatric infectious diseases were almost successfully eradicated through vaccination but have reemerged following lower public awareness of their danger
+and subsequent lower vaccination rates. Physicians should
+therefore learn to recognise these diseases and encourage
+their patients (or their children) to get immunised to attain
+eradication.
+
+Page 3 of 10
+
+Review article: Medical intelligence
+
+Swiss Med Wkly. 2012;142:w13654
+
+Pertussis
+Whooping cough, or pertussis, is a ubiquitous, acute respiratory tract infection, which starts usually as a mild upper
+airway disease (catarrhal stage), progresses to coughing
+spells characterised by a inspiratory whoop and commonly
+followed by vomiting (paroxysmal stage), and ends over
+several weeks (convalescent stage). In its first stage,
+pertussis is highly communicable, with a secondary attack
+rate of up to 90% among non immune household contacts.
+Untreated patients may be contagious for 3 weeks or more,
+although communicability diminishes rapidly after the catarrhal stage. Until recently, Bordetella pertussis was believed to be the only cause of pertussis; however, it is
+now known that B. parapertussis, especially in Europe, and
+possibly other members of the Bordetella family (possibly
+B. holmesii for example) can cause similar symptoms, although probably less severe [26]. Estimates from World
+Health Organization (WHO) suggest that, in 2008, about
+16 million cases of pertussis occurred worldwide, 95% of
+which were in developing countries, and that about 195 000
+children died from the disease [27]. A serological study
+from the US showed that 21% (95% confidence interval
+[CI], 13–32%) of adults with prolonged cough defined as
+lasting >2 weeks had pertussis [28]. Adolescents and adults
+are significant sources of transmission of B. pertussis to
+unvaccinated young infants. A study conducted in Canada,
+France, Germany and the US showed that when pertussis
+occurred in infants, household members – primarily parents
+– were the source of B. pertussis in 76–83% of cases [29].
+Polymerase chain reaction (PCR) on a nasopharyngeal specimen is usually used to confirm the diagnosis. It is important to recognise, that the calcium alginate swabs used for
+
+throat cultures inhibit the PCR and should not be used for
+pertussis, only a Dacron swab (or nasal wash).
+Recommended treatments of pertussis include macrolides,
+such as azithromycin (3–5 days) or erythromycin (14 days),
+or trimethoprim-sulfamethoxazole (14 days). For children
+younger than 6 months old, paediatricians should be consulted for appropriate treatment, as infantile hypertrophic
+pyloric stenosis has been reported in young children. Treatment is most effective during the catarrhal stage [30].
+Chemoprophylaxis is recommended for all household contacts, regardless of age and immunisation status to limit
+secondary transmission and/ or repeated infection of the infant. Antibiotics, doses, and duration are the same as for
+treatment of pertussis. Close contacts who are unimmunised or underimmunised should be vaccinated [30].
+In 2008, about 82% of all infants worldwide received 3
+doses of pertussis vaccine. In Switzerland, 95% of children
+<2 years old had received 3 doses, and 87% 4 doses, as
+recommended in the national vaccination schedule [31].
+WHO estimates that in 2008 global vaccination against
+pertussis averted about 687,000 deaths. In Switzerland, approximately 50 children with pertussis are admitted to the
+hospital every year, mostly infants, and 4 deaths have been
+directly linked with pertussis in the last 15 years (fig. 3)
+[32]. However, the number of cases is probably critically
+underestimated, especially among (vaccinated or not) teenagers and adults, who have been repeatedly identified as infectious sources for the infants, too young to be vaccinated
+while most at risk for severe outcome [33, 34]. Vaccine efficacy is estimated between 75% and 90%, but protection
+following a full vaccination schedule is known to be waning. For this reason, several countries, including Switzerland in 2012, introduced a booster pertussis vaccination in
+young adults between 25 and 19 years old [31, 35, 36].
+Hopefully, this measure will decrease morbidity and mortality among the infants and decrease the burden of disease
+in older children and adults.
+
+Measles
+
+Figure 3
+Clinical cases of pertussis declared by the Sentinella system per
+1,000 consultations, by month (June 1991–August 2011). Source:
+OFSP. Optimisation des rappels vaccinaux contre la diphtérie, le
+tétanos et la coqueluche (dT/dTpa) chez l’adulte. Bull OFSP.
+2011;51:1161–71 [31]. © Bulletin OFSP, reprinted with permission).
+
+The WHO pledged to get Europe measles-free by 2015.
+Switzerland however became sadly worldwide famous during the 2008 Euro soccer tournament because of a measles
+outbreak that started in 2006, and since then several outbreaks have been reported in this country [37, 38]. The
+main reason is that to be eliminated, the population’s vaccine coverage should be higher than the current 82–85%.
+In 2011, still more than 600 cases have been reported in
+Switzerland, which is probably an underestimation of the
+true number of cases (Federal Office of Public Health
+data).
+
+Table 1: Recommendations for adult vaccination against diphtheria, tetanus, and pertussis in Switzerland (2012). Adapted from: OFSP. Optimisation des rappels vaccinaux
+contre la diphtérie, le tétanos et la coqueluche (dT/dTpa) chez l’adulte. Bull OFSP. 2011;51:1161–71 [31].
+Age
+
+16 to 24 years old
+
+25 to 29 years old
+
+30 to 64 years old
+
+≥65 years old
+
+Time since last dose of tetanus vaccine
+
+<10 years
+
+≥10 years
+
+<2 years
+
+≥2 years
+
+< 20 years
+
+≥20 years
+
+<10 years
+
+≥10 years
+
+Previously fully vaccinated against tetanus
+
+0*
+
+0*
+
+0*
+
+1 x dTpa
+
+0*
+
+1 x dT*
+
+0*
+
+1 x dT*
+
+Previously partially vaccinated against tetanus
+
+1–3 x dT*
+
+1 x dTpa / 0–2 x dT
+
+1–3 dT*
+
+1–3 x dT*
+
+d: diphtheria vaccine; T: tetanus vaccine; pa: acellular pertussis vaccine; * 1 x dTpa : if regular contact (professional or personal) with infants younger than 6 months old if
+never vaccinated as an adult and if more than 10 years since last pa.
+Minimum time since last T: 4 weeks.
+
+Swiss Medical Weekly · PDF of the online version · www.smw.ch
+
+Page 4 of 10
+
+Review article: Medical intelligence
+
+Measles is an acute viral disease characterised by fever,
+cough, conjunctivitis, runny nose and an erythematous
+maculopapular rash. Other manifestations such as otitis
+media, bronchopneumonia (5–15%), croup or diarrhea can
+also occur in younger children. Encephalitis and death from
+respiratory failure or neurologic complications occurs in
+about 1 of every 1,000 cases in previously healthy patients,
+and more frequently in younger (<5 years old) and immunocompromised patients. Treatment is symptomatic and
+does not prevent long-term complications such as subacute
+sclerosing panencephalitis 7–10 years later.
+Outside of an outbreak situation, diagnosis can be tricky,
+not because diagnostic tests aren’t available (serologies
+are routinely performed in most laboratories), but because
+physicians haven’t seen measles during their training, or do
+not think of it when seeing a child with an exanthema.
+Two doses of measles live-attenuated vaccine develop a
+long-lasting serological protection in >99% of patients. In
+Finland, for example, where a two doses schedule has been
+introduced since 1982 and vaccination coverage reaches
+98%, indigenous measles has been eliminated since 1995
+[39]. It is therefore within reach to have a measles-free
+Europe, and subsequently a measles-free world if recommendations are followed and physicians emphasise the individual and public health impact of vaccinating all children or to catch-up the unvaccinated adults.
+
+New paediatric hosts
+With the advent of modern neonatology care, survival of
+very low birth weight (≤1500g; VLBW) or extremely low
+birth weight (≤1000 g; ELBW) premature infants is common. These very young patients’ immune system is immature: they are therefore particularly vulnerable to invasive infections [40]. In Switzerland, approximately 1% of
+all births were born before 32 weeks gestational age, with
+an average birth weight of 1194 g [41]. Neonatal bacterial infections-related mortality has declined in recent years
+from 30–40% to 5–10% thanks to awareness of maternal
+and infant factors and earlier treatment with antibiotics.
+This decrease is mostly secondary to the decrease in earlyonset sepsis, while late-onset (7–30 days) or late-late-onset
+(> 30 days) have slightly increased over the last decades
+[42]. Early-onset infections are mostly due to Gram-negative organisms, such as Escherichia coli [43]. Common
+bacteria for late-onset sepsis include coagulase-negative
+staphylococci (almost always associated with a medical
+device), but also Staphylococcus aureus, Enterococcus spp.
+or Gram-negative enteric bacilli. In Germany, almost 91%
+of neonates were treated with antibiotics, this proportion
+being even higher (96.2–100%) in preterm infants below
+30 weeks’ gestation [44]. In Switzerland, Zingg et al have
+recently shown that 26.7% of neonates received systemic
+antibiotics during their stay in neonatology [45]. Amoxicillin in combination with gentamicin was the most frequent
+antibiotic regimen (47.0%), followed by vancomycin combined with gentamicin (10.2%), amoxicillin alone (9.0%),
+vancomycin alone (6.1%), and a cephalosporin alone
+(5.0%, mostly third generation). Infection-associated mortality was 1.3%.
+
+Swiss Medical Weekly · PDF of the online version · www.smw.ch
+
+Swiss Med Wkly. 2012;142:w13654
+
+One major difficulty in treating infections in (premature)
+neonates is the availability of antibiotics that are licensed in
+this age group, and for which safety studies are available.
+Pandolfini et al. reported for example that 14–63% of prescriptions were off-label in neonates, and that the proportion of children given at least one unlicensed or off-label drug was 80–97% neonates [46]. Abraham Jacobi, the
+father of American paediatrics wrote: “Paediatrics does not
+deal with miniature men and women with reduced doses
+and the same class of disease in smaller bodies, but… has
+its own independent range and horizon” [47]. Thus, it is
+clear that the capacity of absorption, distribution, metabolism, and elimination of antibiotics is different in children
+and adults, but also more vividly in premature infants [48].
+Another new category of pediatric hosts are the immunocompromised patients, which represent a new challenge
+for paediatric infectious diseases specialists. These include
+primary immune deficiency patients, which in the past often died during infancy, and who, thanks to antibiotic prophylaxis, intravenous immunoglobulins, and, sometimes,
+bone marrow transplants have increased their survival.
+They also include HIV positive children who, thanks to antiretroviral therapy and, again, antibiotic prophylaxis, not
+only reach adulthood, but can lead “normal” lives. Finally,
+there is the large group of iatrogenically immunocompromised patients, such as oncological patients, transplant recipients, and all patients treated with immunosuppressive
+drugs, such as patients with rheumatological diseases, or
+severe asthma. Pediatric infectious diseases specialists often have to transpose knowledge from similar patients with
+adult diseases, and find solutions using antibiotics compatible with children.
+
+“New” paediatric pathogens
+Emerging pathogens are continuously reported in the literature, thanks to better detection techniques and spread of
+information. One recent example is the impressive rapidity with which the pandemic influenza A/H1N1 was recognised as a new pathogen, and information was transmitted. Since spring 2009, more than 10,000 peer-reviewed
+articles have been published on H1N1, and have identified
+this virus as putting children especially at high risk for infection and severe disease, unlike seasonal influenza which
+can severely affect young children [49, 50]. Thanks to these
+early reports, immunisation of children was recommended
+by the majority of national health authorities even before
+the pandemic arrived [51].
+Three other viruses have played a recent important role
+in paediatric infectious diseases. The first, human metapneumovirus (HMPV), was discovered in 2001, and was
+quickly recognised as one of the main players in Respiratory Syncytial Virus (RSV)-negative respiratory tract infections in young children worldwide. It typically affects children between 2 and 3 years of age, and can be associated
+with coryza, cough, or severe respiratory disease [52]. The
+duration of symptoms prior to medical evaluation is usually less than a week, and limited data suggest that children shed virus for 1 to 2 weeks [53]. It can be found year
+long, but is most frequently detected 1–2 months after RSV
+season. HMPV was classified as the first human member
+
+Page 5 of 10
+
+Review article: Medical intelligence
+
+of the Metapneumovirus genus, of the family Paramyxoviridae. At least two genetic lineages of HMPV are circulating in humans, with two sublineages each [54]. Antibody
+responses are elicited against the highly conserved F protein of HMPV may provide significant cross-protection
+against different HMPV lineages in animal studies [55]. It
+is however possible that antigenic variation explains the
+co-circulation of multiple genetic sublineages of HMPV in
+humans.
+The second, part of the human coronavirus (HCoV) family
+discovered in 1965 and famous for one of its other members (SARS) was only identified in 2004 as a frequent
+cause for upper and lower respiratory tract infections in
+children [56]. HCoV-NL63 typically affects children
+younger than one year of age, but older children can be infected as well; it can also cause croup, and febrile convulsions. In a birth cohort followed during their first year of
+life, Kaiser et al showed that coronaviruses were identified
+in 16% of children with lower respiratory tract symptoms,
+at a median age of 5.7 months (range 0.7–11.4 months),
+and mostly during the cold months [57]. Although its incidence seemed lower in other studies, HCoV-NL63 still is
+one of the most frequently found viruses in nasal aspirates
+of symptomatic children [58].
+Finally, the third virus, discovered in 2005, is the human
+bocavirus (HBoV), which is famous for being the first
+virus identified by “molecular virus screening”, a procedure based on DNase treatment of nasopharyngeal samples,
+random nucleic acid amplification and cloning, followed
+by large scale sequencing and bioinformatic analyses [59].
+Human bocaviruses have been detected worldwide in respiratory and stool samples, but also in other biological
+samples, as well as in water. All age groups can be infected,
+but it is most commonly found in young children aged 6–24
+months with respiratory tract infections or gastroenteritis.
+The transmission routes of HBoV are unknown. However,
+many similar viruses are transmitted by inhalation or contact with infectious sputum, feces, or urine. Clear causality,
+presentation modes and clinical relevance of HBoV are still
+debated and more evidence should be gathered in the coming years [60]. Other “new” viruses have been described recently, including KI and WU polyomaviruses, or the torque
+teno virus, increasing significantly the rate of identifiable
+viral causes for paediatric respiratory diseases [61].
+It is likely that in the near future new techniques, such as
+molecular screening will identify new pathogens that cause
+diseases in children. It is also probable that new diseases
+will emerge, or that new treatment strategies will be available to paediatric patients thanks to clinical research and
+incentives to cross the gap in paediatric drug development
+[62]. Finally, research is investigating how to connect diseases recognised in adults with infections acquired during childhood, such auto-immune diseases, and viral infections. It is therefore foreseeable that paediatric infectious
+diseases will remain a sentinel for public health issues, and
+for individual healthcare.
+
+Funding / potential competing interests: No financial support
+and no other potential conflict of interest relevant to this article
+was reported.
+
+Swiss Medical Weekly · PDF of the online version · www.smw.ch
+
+Swiss Med Wkly. 2012;142:w13654
+
+Correspondence: Klara M. Posfay-Barbe, MD, Children’s
+Hospital of Geneva, University Hospitals of Geneva, 6, rue
+Willy-Donzé, CH-1211 Geneva 14, Switzerland,
+klara.posfaybarbe[at]hcuge.ch
+
+References
+1 Liu L, Johnson HL, Cousens S, Perin J, Scott S, Lawn JE, et al.
+Global, regional, and national causes of child mortality: an updated
+systematic analysis for 2010 with time trends since 2000. Lancet.
+2012;379(9832):2151–61.
+2 Still GF. The history of paediatrics. London: Oxford University Press;
+1931.
+3 Colón A, Colón P. Nurturing children, a history of pediatrics. Press G
+(editor). Westport; 1999.
+4 Paradise JL, Rockette HE, Colborn DK, Bernard BS, Smith CG, KursLasky M, et al. Otitis media in 2253 Pittsburgh-area infants: prevalence
+and risk factors during the first two years of life. Pediatrics.
+1997;99(3):318–33.
+5 DiFranza JR, Lew RA. Morbidity and mortality in children associated
+with the use of tobacco products by other people. Pediatrics.
+1996;97(4):560–8.
+6 Chonmaitree T. Viral and bacterial interaction in acute otitis media. Pediatr Infect Dis J. 2000;19(5 Suppl):S24–30.
+7 Jacobs MR, Dagan R, Appelbaum PC, Burch DJ. Prevalence of
+antimicrobial-resistant pathogens in middle ear fluid: multinational
+study of 917 children with acute otitis media. Antimicrob Agents
+Chemother. 1998;42(3):589–95.
+8 Black S, Shinefield H, Fireman B, Lewis E, Ray P, Hansen JR, et al.
+Efficacy, safety and immunogenicity of heptavalent pneumococcal conjugate vaccine in children. Northern California Kaiser Permanente Vaccine Study Center Group. Pediatr Infect Dis J. 2000;19(3):187–95.
+9 Jansen AG, Hak E, Veenhoven RH, Damoiseaux RA, Schilder AG,
+Sanders EA. Pneumococcal conjugate vaccines for preventing otitis
+media. Cochrane Database Syst Rev. 2009(2):CD001480.
+10 Stamboulidis K, Chatzaki D, Poulakou G, Ioannidou S, Lebessi E, Katsarolis I, et al. The impact of the heptavalent pneumococcal conjugate
+vaccine on the epidemiology of acute otitis media complicated by otorrhea. Pediatr Infect Dis J. 2011;30(7):551–5.
+11 Huang SS, Johnson KM, Ray GT, Wroe P, Lieu TA, Moore MR, et al.
+Healthcare utilization and cost of pneumococcal disease in the United
+States. Vaccine. 2011;29(18):3398–412.
+12 OFSP. [Maladies à pneumocoques]. Bull OFSP. 2010;47:1121–7.
+13 Shaikh N, Leonard E, Martin JM. Prevalence of streptococcal
+pharyngitis and streptococcal carriage in children: a meta-analysis. Pediatrics. 2010;126(3):e557–64.
+14 Randolph MF, Gerber MA, DeMeo KK, Wright L. Effect of antibiotic
+therapy on the clinical course of streptococcal pharyngitis. J Pediatr.
+1985;106(6):870–5.
+15 Needham CA, McPherson KA, Webb KH. Streptococcal pharyngitis:
+impact of a high-sensitivity antigen test on physician outcome. J Clin
+Microbiol. 1998;36(12):3468–73.
+16 Pickering LK, Baker CJ, Kimberlin DW, Long SS. Group A streptococcal infections. In: Pediatrics AAP, editor. Red Book: 2009 Report of
+the Committee on Infectious Diseases 28th ed. Elk Grove Village, IL;
+2009. p. 616–28.
+17 Chiappini E, Regoli M, Bonsignori F, Sollai S, Parretti A, Galli L, et
+al. Analysis of different recommendations from international guidelines
+for the management of acute pharyngitis in adults and children. Clin
+Ther. 2011;33(1):48–58.
+18 Centor RM, Allison JJ, Cohen SJ. Pharyngitis management: defining
+the controversy. J Gen Intern Med. 2007;22(1):127–30.
+19 Kaplan EL, Johnson DR, Del Rosario MC, Horn DL. Susceptibility of
+group A beta-hemolytic streptococci to thirteen antibiotics: examination of 301 strains isolated in the United States between 1994 and 1997.
+Pediatr Infect Dis J. 1999;18(12):1069–72.
+
+Page 6 of 10
+
+Review article: Medical intelligence
+
+Swiss Med Wkly. 2012;142:w13654
+
+20 Pandey M, Batzloff MR, Good MF. Vaccination against rheumatic heart
+disease: a review of current research strategies and challenges. Curr Infect Dis Rep. 2012;14(4):381–90.
+
+43 Stoll BJ, Hansen N. Infections in VLBW infants: studies from the
+NICHD
+Neonatal
+Research
+Network.
+Semin
+Perinatol.
+2003;27(4):293–301.
+
+21 Sullivan P, Woodward WE, Pickering LK, DuPont HL. Longitudinal
+study of occurrence of diarrheal disease in day care centers. Am J
+Public Health. 1984;74(9):987–91.
+
+44 Neubert A, Lukas K, Leis T, Dormann H, Brune K, Rascher W. Drug
+utilisation on a preterm and neonatal intensive care unit in Germany:
+a prospective, cohort-based analysis. Eur J Clin Pharmacol.
+2010;66(1):87–95.
+
+22 Duggan C, Lasche J, McCarty M, Mitchell K, Dershewitz R, Lerman
+SJ, et al. Oral rehydration solution for acute diarrhea prevents subsequent unscheduled follow-up visits. Pediatrics. 1999;104(3):e29.
+23 Tamer AM, Friedman LB, Maxwell SR, Cynamon HA, Perez HN,
+Cleveland WW. Oral rehydration of infants in a large urban U.S. medical center. J Pediatr. 1985;107(1):14–9.
+24 Prevention CfDC. Withdrawal of Rotavirus Vaccine Recommendation.
+MMWR. 1999;48(43).
+25 OFSP. Vaccination contre les rotavirus: pas d’introduction dans le Plan
+suisse de vaccination. Bull OFSP. 2008;28:492–5.
+26 Mastrantonio P, Stefanelli P, Giuliano M, Herrera Rojas Y, Ciofi degli
+Atti M, Anemona A, et al. Bordetella parapertussis infection in children: epidemiology, clinical symptoms, and molecular characteristics of
+isolates. J Clin Microbiol. 1998;36(4):999–1002.
+27 World Health Organization (WHO). Pertussis vaccine: WHO position
+paper. Weekly Epidemiological Record. 2010;40(85):6.
+
+45 Zingg W, Pfister R, Posfay-Barbe KM, Huttner B, Touveneau S, Pittet
+D. Secular trends in antibiotic use among neonates: 2001-2008. Pediatr
+Infect Dis J. 2011;30(5):365–70.
+46 Pandolfini C, Bonati M. A literature review on off-label drug use in
+children. Eur J Pediatr. 2005;164(9):552–8.
+47 Kearns GL, Abdel-Rahman SM, Alander SW, Blowey DL, Leeder
+JS, Kauffman RE. Developmental pharmacology-drug disposition, action, and therapy in infants and children. N Engl J Med.
+2003;349(12):1157–7.
+48 Zingg W, Posfay-Barbe KM. Antibiotic use in children - off-label use.
+Curr Drug Targets. 2012 Apr 18.
+49 Kwan-Gett TS, Baer A, Duchin JS. Spring 2009 H1N1 influenza outbreak in King County, Washington. Disaster Med Public Health Prep.
+2009;3 Suppl 2:S109–16.
+
+28 Wright SW, Edwards KM, Decker MD, Zeldin MH. Pertussis infection
+in adults with persistent cough. JAMA. 1995;273(13):1044–6.
+
+50 Launes C, Garcia-Garcia JJ, Martinez-Planas A, Moraga F, Astigarraga
+I, Aristegui J, et al. 2009 H1N1: risk factors for hospitalization in a
+matched case-control study. Eur J Pediatr. 2012;21.
+
+29 Wendelboe AM, Hudgens MG, Poole C, Van Rie A. Estimating the
+role of casual contact from the community in transmission of Bordetella
+pertussis to young infants. Emerg Themes Epidemiol. 2007;4:15.
+
+51 OFSP. [Office Fédéral de la Santé Publique. Grippe saisonnière 2008/
+2009. Epidémiologie, virologie, approvisionnement en vaccins et composition des vaccins]. Bull OFSP. 2009;2009:523–9.
+
+30 Pickering LK, Baker CJ, Kimberlin DW, Long SS. Pertussis (Whooping
+Cough). In: Pediatrics AAP, editor. Red Book: 2009 report of the Committee on Infectious Diseases 28th ed. Elk Grove Village, IL;
+2009;504–20.
+
+52 Baer G, Schaad UB, Heininger U. Clinical findings and unusual epidemiologic characteristics of human metapneumovirus infections in
+children in the region of Basel, Switzerland. Eur J Pediatr.
+2008;167(1):63–9.
+
+31 OFSP. Optimisation des rappels vaccinaux contre la diphtérie, le tétanos
+et la coqueluche (dT/dTpa) chez l’adulte. Bull OFSP. 2011;51:1161–71.
+
+53 van den Hoogen BG, van Doornum GJ, Fockens JC, Cornelissen JJ,
+Beyer WE, de Groot R, et al. Prevalence and clinical symptoms of human metapneumovirus infection in hospitalized patients. J Infect Dis.
+2003;188(10):1571–7.
+
+32 OFSP. Coqueluche/Pertussis. Journal [serial on the Internet]. 2012 last
+accessed July 11, 2012: Available from: http://www.bag.admin.ch/themen/medizin/00682/00684/01082/index.html?lang=fr.
+33 Halperin SA, Bortolussi R, MacLean D, Chisholm N. Persistence of
+pertussis in an immunized population: results of the Nova Scotia Enhanced Pertussis Surveillance Program. J Pediatr. 1989;115(5 Pt
+1):686–93.
+34 Wendelboe AM, Njamkepo E, Bourillon A, Floret DD, Gaudelus J, Gerber M, et al. Transmission of Bordetella pertussis to young infants. Pediatr Infect Dis J. 2007;26(4):293–9.
+35 Ward JI, Cherry JD, Chang SJ, Partridge S, Lee H, Treanor J, et al. Efficacy of an acellular pertussis vaccine among adolescents and adults.
+N Engl J Med. 2005 ;353(15):1555–63.
+36 Halperin SA, Sweet L, Baxendale D, Neatby A, Rykers P, Smith B, et
+al. How soon after a prior tetanus-diphtheria vaccination can one give
+adult formulation tetanus-diphtheria-acellular pertussis vaccine? Pediatr Infect Dis J. 2006;25(3):195–200.
+37 OFSP. L’épidémie de rougeole se poursuit en Suisse. Bull OFSP.
+2008;24:430–2.
+38 OFSP. Nouvelle vague de l’épidémie de rougeole en début d’année
+2009: description et mesures. Bull OFSP. 2009;27:484–91.
+39 Peltola H, Heinonen OP, Valle M, Paunio M, Virtanen M, Karanko V,
+et al. The elimination of indigenous measles, mumps, and rubella from
+Finland by a 12-year, two-dose vaccination program. N Engl J Med.
+1994;331(21):1397–402.
+40 Levy O. Innate immunity of the newborn: basic mechanisms and clinical correlates. Nat Rev Immunol. 2007;7(5):379–90.
+41 Bajwa NM, Berner M, Worley S, Pfister RE. Population based age stratified morbidities of premature infants in Switzerland. Swiss Med Wkly.
+2011;141:w13212.
+
+54 van den Hoogen BG, de Jong JC, Groen J, Kuiken T, de Groot R,
+Fouchier RA, et al. A newly discovered human pneumovirus isolated
+from young children with respiratory tract disease. Nat Med.
+2001;7(6):719–24.
+55 Skiadopoulos MH, Biacchesi S, Buchholz UJ, Riggs JM, Surman SR,
+Amaro-Carambot E, et al. The two major human metapneumovirus
+genetic lineages are highly related antigenically, and the fusion (F)
+protein is a major contributor to this antigenic relatedness. J Virol.
+2004;78(13):6927–37.
+56 van der Hoek L, Pyrc K, Jebbink MF, Vermeulen-Oost W, Berkhout
+RJ, Wolthers KC, et al. Identification of a new human coronavirus. Nat
+Med. 2004;10(4):368–73.
+57 Kaiser L, Regamey N, Roiha H, Deffernez C, Frey U. Human
+coronavirus NL63 associated with lower respiratory tract symptoms in
+early life. Pediatr Infect Dis J. 2005;24(11):1015–7.
+58 van der Hoek L, Sure K, Ihorst G, Stang A, Pyrc K, Jebbink MF, et
+al. Croup is associated with the novel coronavirus NL63. PLoS Med.
+2005;2(8):e240.
+59 Allander T, Tammi MT, Eriksson M, Bjerkner A, Tiveljung-Lindell
+A, Andersson B. Cloning of a human parvovirus by molecular screening of respiratory tract samples. Proc Natl Acad Sci U S A.
+2005;102(36):12891–6.
+60 Jartti T, Hedman K, Jartti L, Ruuskanen O, Allander T, SoderlundVenermo M. Human bocavirus-the first 5 years. Rev Med Virol.
+2012;22(1):46–64.
+61 Jartti T, Jartti L, Ruuskanen O, Soderlund-Venermo M. New respiratory
+viral infections. Curr Opin Pulm Med. 2012;18(3):271–8.
+62 Steinbrook R. Testing medications in children. N Engl J Med.
+2002;347(18):1462–70.
+
+42 Bizzarro MJ, Raskind C, Baltimore RS, Gallagher PG. Seventy-five
+years of neonatal sepsis at Yale: 1928-2003. Pediatrics.
+2005;116(3):595–602.
+
+Swiss Medical Weekly · PDF of the online version · www.smw.ch
+
+Page 7 of 10
+
+Review article: Medical intelligence
+
+Swiss Med Wkly. 2012;142:w13654
+
+Figures (large format)
+
+Figure 1
+Current recommendations for the treatment of acute otitis media by the pediatric infectious diseases specialists of Switzerland (www.pigs.ch).
+
+Swiss Medical Weekly · PDF of the online version · www.smw.ch
+
+Page 8 of 10
+
+Review article: Medical intelligence
+
+Swiss Med Wkly. 2012;142:w13654
+
+Figure 2
+Current recommendations for the management of acute pharyngitis by the Pediatric Infectious Diseases Specialists of Switzerland
+(www.pigs.ch).
+
+Swiss Medical Weekly · PDF of the online version · www.smw.ch
+
+Page 9 of 10
+
+Review article: Medical intelligence
+
+Swiss Med Wkly. 2012;142:w13654
+
+Figure 3
+Clinical cases of pertussis declared by the Sentinella system per 1,000 consultations, by month (June 1991–August 2011). Source: OFSP.
+Optimisation des rappels vaccinaux contre la diphtérie, le tétanos et la coqueluche (dT/dTpa) chez l’adulte. Bull OFSP. 2011;51:1161–71 [31].
+© Bulletin OFSP, reprinted with permission).
+
+Swiss Medical Weekly · PDF of the online version · www.smw.ch
+
+Page 10 of 10
+
+
