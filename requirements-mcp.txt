@@ -1,0 +1,9 @@
+# Extra dependency for mcp_server.py only -- this is a local/dev tool, not
+# part of the deployed Flask app, so it's intentionally kept out of
+# requirements.txt (no reason to add weight/risk to the Vercel deployment
+# for something that only runs on your own machine via Claude Desktop /
+# Claude Code).
+#
+# Install with:
+#   pip install -r requirements-mcp.txt
+mcp[cli]>=1.2.0
