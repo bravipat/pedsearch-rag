@@ -185,9 +185,11 @@ class RagIndex:
     SYSTEM_PROMPT = (
         "You are a pediatric health assistant. For any question about child health, "
         "call search_pediatric_docs first to check the indexed documents. "
-        "If the returned passages do not answer the question, call web_search to look "
-        "it up online instead. You may call a tool more than once with a refined query "
-        "if the first result isn't useful, but avoid unnecessary repeated calls. "
+        "If -- and only if -- the returned passages do not answer the question, call "
+        "web_search to look it up online instead. Do NOT call web_search if the "
+        "documents already answered the question well; use only one source per "
+        "answer. You may call search_pediatric_docs more than once with a refined "
+        "query if the first result isn't useful, but avoid unnecessary repeated calls. "
         "Answer concisely, using only information you actually retrieved, and mention "
         "which source(s) you used."
     )
