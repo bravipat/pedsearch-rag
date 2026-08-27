@@ -62,7 +62,7 @@ CHUNK_OVERLAP = 75                           # characters of overlap between chu
 TOP_K = 4                                    # number of chunks to retrieve
 EMBEDDING_MODEL = "text-embedding-3-small"   # OpenAI embedding model, 1536-dim
 CLAUDE_MODEL = "claude-sonnet-5"             # answer-generation model
-NOT_FOUND_TOKEN = "NOT_FOUND_IN_DOCS"
+MAX_TOOL_TURNS = 4                           # safety cap on the tool-calling loop
 
 
 @dataclass
@@ -171,75 +171,125 @@ class RagIndex:
         return [self.chunks[i] for i in idxs[0] if i != -1]
 
     # -------------------------------------------------------------- answer ---
+    #
+    # answer() runs a real Anthropic tool-calling loop instead of a hardcoded
+    # "always retrieve, then check a sentinel string" pipeline. Claude is
+    # given two tools -- search_pediatric_docs (a *client* tool: we execute
+    # it ourselves against the FAISS index) and web_search (a *server* tool:
+    # Anthropic executes it and returns the resolved result/citations in the
+    # same turn) -- and decides per question which one(s) it actually needs,
+    # possibly calling both. See the "Tool calling, MCP, and PedSearch" guide
+    # for the full explanation of why this replaced the old NOT_FOUND_TOKEN
+    # string-matching approach.
 
-    def _ask_claude_over_context(self, question: str, chunks: List[Chunk]) -> str:
-        context = "\n\n".join(
-            f"[Source: {c.file} | chunk {c.chunk_id}]\n{c.text}" for c in chunks
-        )
-        system = (
-            "You answer questions using ONLY the provided document excerpts. "
-            f"If the excerpts do not contain the answer, respond with exactly: {NOT_FOUND_TOKEN} "
-            "and nothing else. Otherwise, answer concisely and mention which source(s) you used."
-        )
-        message = self._anthropic.messages.create(
-            model=self.claude_model,
-            max_tokens=600,
-            system=system,
-            messages=[
-                {
-                    "role": "user",
-                    "content": f"Document excerpts:\n\n{context}\n\nQuestion: {question}",
-                }
-            ],
-        )
-        return "".join(b.text for b in message.content if b.type == "text").strip()
+    SYSTEM_PROMPT = (
+        "You are a pediatric health assistant. For any question about child health, "
+        "call search_pediatric_docs first to check the indexed documents. "
+        "If the returned passages do not answer the question, call web_search to look "
+        "it up online instead. You may call a tool more than once with a refined query "
+        "if the first result isn't useful, but avoid unnecessary repeated calls. "
+        "Answer concisely, using only information you actually retrieved, and mention "
+        "which source(s) you used."
+    )
 
-    def _ask_claude_with_web_search(self, question: str) -> Dict[str, Any]:
-        message = self._anthropic.messages.create(
-            model=self.claude_model,
-            max_tokens=800,
-            tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 3}],
-            messages=[
-                {
-                    "role": "user",
-                    "content": (
-                        "I could not find the answer to this question in my local documents. "
-                        f"Please search the web and answer it: {question}"
-                    ),
-                }
-            ],
-        )
-        text = "".join(b.text for b in message.content if b.type == "text").strip()
-        citations = []
-        for block in message.content:
-            if block.type == "text" and getattr(block, "citations", None):
-                for c in block.citations:
-                    url = getattr(c, "url", None)
-                    if url:
-                        citations.append(url)
-        return {"text": text, "citations": citations}
+    @staticmethod
+    def _tools() -> List[Dict[str, Any]]:
+        return [
+            {
+                "name": "search_pediatric_docs",
+                "description": (
+                    "Search the indexed pediatric health documents for passages "
+                    "relevant to a question. Use this first for any question about "
+                    "child health."
+                ),
+                "input_schema": {
+                    "type": "object",
+                    "properties": {
+                        "query": {"type": "string", "description": "The search query"}
+                    },
+                    "required": ["query"],
+                },
+            },
+            {"type": "web_search_20250305", "name": "web_search", "max_uses": 3},
+        ]
+
+    def _run_search_tool(self, query: str, sources: List[Dict[str, Any]]) -> str:
+        """Execute the client-side search_pediatric_docs tool call and record
+        which chunks were used (deduped) so they can be shown as sources."""
+        chunks = self.retrieve(query)
+        for c in chunks:
+            entry = {"file": c.file, "chunk_id": c.chunk_id, "excerpt": c.text[:200]}
+            if entry not in sources:
+                sources.append(entry)
+        if not chunks:
+            return "No relevant passages found in the indexed documents."
+        return "\n\n".join(f"[{c.file} #{c.chunk_id}] {c.text}" for c in chunks)
 
     def answer(self, question: str) -> Dict[str, Any]:
-        chunks = self.retrieve(question)
-        draft = self._ask_claude_over_context(question, chunks)
+        messages: List[Dict[str, Any]] = [{"role": "user", "content": question}]
+        sources: List[Dict[str, Any]] = []
+        web_citations: List[str] = []
+        used_web_search = False
 
-        if NOT_FOUND_TOKEN in draft:
-            web = self._ask_claude_with_web_search(question)
-            return {
-                "answer": web["text"],
-                "used_web_search": True,
-                "sources": [],
-                "web_citations": web["citations"],
-            }
+        for _ in range(MAX_TOOL_TURNS):
+            response = self._anthropic.messages.create(
+                model=self.claude_model,
+                max_tokens=800,
+                system=self.SYSTEM_PROMPT,
+                tools=self._tools(),
+                messages=messages,
+            )
 
+            # Web search is a *server* tool: Anthropic runs it and resolves it
+            # within this same response, surfaced to us as citations on the
+            # text block (and/or a server_tool_use block naming it).
+            for block in response.content:
+                if getattr(block, "type", None) == "text" and getattr(block, "citations", None):
+                    used_web_search = True
+                    for c in block.citations:
+                        url = getattr(c, "url", None)
+                        if url and url not in web_citations:
+                            web_citations.append(url)
+                elif getattr(block, "type", None) == "server_tool_use" and getattr(block, "name", None) == "web_search":
+                    used_web_search = True
+
+            # search_pediatric_docs is a *client* tool: any pending calls need
+            # us to execute them and send a tool_result back before Claude
+            # can continue.
+            pending = [
+                b for b in response.content
+                if getattr(b, "type", None) == "tool_use" and getattr(b, "name", None) == "search_pediatric_docs"
+            ]
+
+            if not pending:
+                answer_text = "".join(
+                    b.text for b in response.content if getattr(b, "type", None) == "text"
+                ).strip()
+                return {
+                    "answer": answer_text,
+                    "used_web_search": used_web_search,
+                    "sources": sources,
+                    "web_citations": web_citations,
+                }
+
+            messages.append({"role": "assistant", "content": response.content})
+            tool_results = []
+            for call in pending:
+                query = (call.input or {}).get("query") or question
+                result_text = self._run_search_tool(query, sources)
+                tool_results.append(
+                    {"type": "tool_result", "tool_use_id": call.id, "content": result_text}
+                )
+            messages.append({"role": "user", "content": tool_results})
+
+        # Safety valve: the loop above should normally end via a plain text
+        # reply well before this, but don't loop forever if Claude keeps
+        # calling tools.
         return {
-            "answer": draft,
-            "used_web_search": False,
-            "sources": [
-                {"file": c.file, "chunk_id": c.chunk_id, "excerpt": c.text[:200]}
-                for c in chunks
-            ],
-            "web_citations": [],
+            "answer": "I wasn't able to work out a confident answer to that -- please try rephrasing the question.",
+            "used_web_search": used_web_search,
+            "sources": sources,
+            "web_citations": web_citations,
         }
 
 
@@ -260,7 +310,7 @@ if __name__ == "__main__":
         print("\n(Answered via web search -- not found in local docs)")
         for url in result["web_citations"]:
             print(" -", url)
-    # else:
-        # print("\nSources:")
-        # for s in result["sources"]:
-        #     print(f" - {s['file']} (chunk {s['chunk_id']}): {s['excerpt']}...")
+    else:
+        print("\nSources:")
+        for s in result["sources"]:
+            print(f" - {s['file']} (chunk {s['chunk_id']}): {s['excerpt']}...")
