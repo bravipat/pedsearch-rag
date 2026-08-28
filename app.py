@@ -487,7 +487,7 @@ PAGE = """
     {% endif %}
 
     <form method="post" onsubmit="onAsk(this)">
-      <textarea name="question" placeholder="Ask a question about your documents..." {{ 'disabled' if startup_error else '' }}>{{ question or '' }}</textarea>
+      <textarea name="question" placeholder="Ask a question..." {{ 'disabled' if startup_error else '' }}>{{ question or '' }}</textarea>
       <div class="form-row">
         <button type="submit" id="ask-btn" {{ 'disabled' if startup_error else '' }}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
